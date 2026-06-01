@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 // ⚠️ users 테이블에서 Clerk user id 가 들어가는 "컬럼 이름". 실제 컬럼명에 맞추세요.
-const USER_ID_COLUMN = 'clerk_id';
+const USER_ID_COLUMN = 'id';
 
 async function setPlan(clerkUserId: string, plan: 'free' | 'pro') {
   const { error } = await supabaseAdmin
