@@ -45,7 +45,7 @@ export default async function LandingPage() {
       <div className="w-full max-w-lg text-center">
 
         <div className="inline-flex items-center gap-2.5 mb-7">
-          <div className="w-8 h-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center text-sm font-medium">P</div>
+          <div className="w-8 h-8 rounded-lg bg-[#5b5bd6] text-white flex items-center justify-center text-sm font-medium">P</div>
           <span className="text-base font-medium text-neutral-900">폐급 AI</span>
         </div>
 
@@ -57,7 +57,7 @@ export default async function LandingPage() {
         </p>
 
         <SignInButton mode="modal">
-          <button className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-800 transition-colors">
+          <button className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-lg bg-[#5b5bd6] text-white text-sm font-medium hover:bg-[#4d4dc6] transition-colors">
             <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24">
               <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
               <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -72,7 +72,7 @@ export default async function LandingPage() {
         <div className="mt-9 mx-auto max-w-md text-left bg-white border border-neutral-200 rounded-xl overflow-hidden">
           <div className="flex items-center justify-between px-3.5 py-2.5 border-b border-neutral-200">
             <span className="text-[13px] font-medium text-neutral-900">광합성</span>
-            <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">교육 중</span>
+            <span className="text-[11px] font-medium text-[#3c3489] bg-[#eeedfe] px-2 py-0.5 rounded-full">교육 중</span>
           </div>
           <div className="px-3.5 py-4 space-y-3">
             <div className="flex gap-2.5">
@@ -80,7 +80,7 @@ export default async function LandingPage() {
               <div className="text-[13px] leading-relaxed text-neutral-900 bg-neutral-100 px-3 py-2 rounded-xl">광합성이요? 식물이 햇빛을 먹는 거 아니에요?</div>
             </div>
             <div className="flex justify-end">
-              <div className="text-[13px] leading-relaxed text-white bg-neutral-900 px-3 py-2 rounded-xl max-w-[78%]">먹는 게 아니라, 빛 에너지로 양분을 만드는 거야.</div>
+              <div className="text-[13px] leading-relaxed text-white bg-[#5b5bd6] px-3 py-2 rounded-xl max-w-[78%]">먹는 게 아니라, 빛 에너지로 양분을 만드는 거야.</div>
             </div>
             <div className="flex gap-2.5">
               <div className="w-6 h-6 shrink-0 rounded-full bg-neutral-900 text-white flex items-center justify-center text-[10px] font-medium">AI</div>
@@ -90,7 +90,7 @@ export default async function LandingPage() {
           <div className="flex items-center gap-2.5 px-3.5 py-2.5 border-t border-neutral-200 bg-neutral-50">
             <span className="text-[11px] text-neutral-400 shrink-0">이해도</span>
             <div className="flex-1 h-1.5 bg-white rounded-full overflow-hidden">
-              <div className="h-full bg-neutral-900" style={{ width: '60%' }} />
+              <div className="h-full bg-[#5b5bd6]" style={{ width: '60%' }} />
             </div>
             <span className="text-xs font-medium text-neutral-900 shrink-0">60%</span>
           </div>
@@ -99,7 +99,7 @@ export default async function LandingPage() {
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
           {features.map(f => (
             <div key={f.title} className="p-4 rounded-xl bg-white border border-neutral-200 text-left">
-              <div className="text-neutral-900">{f.icon}</div>
+              <div className="text-[#5b5bd6]">{f.icon}</div>
               <p className="mt-2.5 text-[13px] font-medium text-neutral-900">{f.title}</p>
               <p className="mt-1 text-xs leading-relaxed text-neutral-400">{f.desc}</p>
             </div>
