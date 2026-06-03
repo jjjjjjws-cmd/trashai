@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useUser, UserButton } from '@clerk/nextjs';
 import Sidebar from '@/components/Sidebar';
 import ChatArea from '@/components/ChatArea';
@@ -63,6 +63,12 @@ export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [statusOpen, setStatusOpen] = useState(false);
   const [isPro, setIsPro] = useState(false);
+  useEffect(() => {
+    fetch('/api/me')
+      .then(r => r.json())
+      .then(d => { if (d.plan === 'pro') setIsPro(true); })
+      .catch(() => {});
+  }, []);
 
   const activeRoom = rooms.find(r => r.id === activeRoomId) ?? null;
   const messages = activeRoomId ? (messagesByRoom[activeRoomId] ?? []) : [];
