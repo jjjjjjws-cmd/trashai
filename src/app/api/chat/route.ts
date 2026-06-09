@@ -129,10 +129,20 @@ export async function POST(req: Request) {
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
 
-  let result = { message: text, reasoning: '', conceptUpdates: [] };
+  const clean = text.replace(/```json|```/g, '').trim();
+  let result: { message: string; reasoning: string; conceptUpdates: unknown[] } = {
+    message: clean, reasoning: '', conceptUpdates: [],
+  };
   try {
-    const clean = text.replace(/```json|```/g, '').trim();
-    result = JSON.parse(clean);
+    const s = clean.indexOf('{');
+    const e = clean.lastIndexOf('}');
+    const jsonStr = s !== -1 && e !== -1 ? clean.slice(s, e + 1) : clean;
+    const parsed = JSON.parse(jsonStr);
+    result = {
+      message: parsed.message ?? clean,
+      reasoning: parsed.reasoning ?? '',
+      conceptUpdates: parsed.conceptUpdates ?? [],
+    };
   } catch {}
 
   // 사용량 증가
