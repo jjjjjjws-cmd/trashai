@@ -63,15 +63,15 @@ export default function ChatArea({ room, messages, isTyping, thinkingText, isPro
   return (
     <div className="flex flex-col h-full bg-neutral-50 min-w-0">
       <div className="flex items-center justify-between px-4 py-3.5 border-b border-neutral-200 bg-white flex-shrink-0">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 min-w-0">
           <button onClick={onToggleSidebar} className="lg:hidden w-8 h-8 rounded-lg hover:bg-neutral-100 flex items-center justify-center text-neutral-400 transition-colors">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
             </svg>
           </button>
-          <div>
-            <div className="flex items-center gap-2">
-              <h2 className="text-sm font-semibold text-neutral-900">{room.title}</h2>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 min-w-0">
+              <h2 className="text-sm font-semibold text-neutral-900 truncate">{room.title}</h2>
               <div className="flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-[#eeedfe] border border-[#d9d6f7]">
                 <div className="w-1 h-1 rounded-full bg-[#5b5bd6] animate-pulse" />
                 <span className="text-[10px] text-[#3c3489]">교육 중</span>
@@ -80,14 +80,14 @@ export default function ChatArea({ room, messages, isTyping, thinkingText, isPro
             <p className="text-[11px] text-neutral-400 mt-0.5">{messages.length}턴 진행 · AI가 배우고 있어요</p>
           </div>
         </div>
-        <button onClick={onToggleStatus} className="xl:hidden flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 text-xs text-neutral-500 transition-colors">
+        <button onClick={onToggleStatus} className="xl:hidden flex-shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 text-xs text-neutral-500 transition-colors">
           <div className="w-1.5 h-1.5 rounded-full bg-[#5b5bd6]" />
           <span className="text-[10px]">이해 상태</span>
         </button>
       </div>
 
-      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-neutral-100 bg-white">
-        <span className="text-[10px] text-neutral-400 mr-1">AI 성격</span>
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-neutral-100 bg-white overflow-x-auto whitespace-nowrap">
+        <span className="text-[10px] text-neutral-400 mr-1 flex-shrink-0">AI 성격</span>
         {(Object.keys(CHARACTER_CONFIG) as Character[]).map(c => {
           const isLocked = PRO_CHARACTERS.includes(c) && !isPro;
           return (
@@ -98,22 +98,22 @@ export default function ChatArea({ room, messages, isTyping, thinkingText, isPro
                 setCharacter(c);
               }}
               title={isLocked ? '프로 전용 기능입니다' : undefined}
-              className={`px-2.5 py-1 rounded-lg text-xs font-medium border transition-all duration-150 relative ${isLocked ? 'bg-transparent text-neutral-300 border-transparent cursor-not-allowed' : character === c ? 'bg-neutral-100 text-neutral-900 border-neutral-300' : 'bg-transparent text-neutral-400 border-transparent hover:border-neutral-200 hover:text-neutral-600'}`}
+              className={`flex-shrink-0 px-2.5 py-1 rounded-lg text-xs font-medium border transition-all duration-150 relative ${isLocked ? 'bg-transparent text-neutral-300 border-transparent cursor-not-allowed' : character === c ? 'bg-neutral-100 text-neutral-900 border-neutral-300' : 'bg-transparent text-neutral-400 border-transparent hover:border-neutral-200 hover:text-neutral-600'}`}
             >
               {CHARACTER_CONFIG[c].label}
               {isLocked && <span className="ml-1 text-[9px]">🔒</span>}
             </button>
           );
         })}
-        <span className="text-[10px] text-neutral-300 ml-1">{CHARACTER_CONFIG[character].desc}</span>
+        <span className="hidden sm:inline text-[10px] text-neutral-300 ml-1">{CHARACTER_CONFIG[character].desc}</span>
         {!isPro && (
-          <a href="/upgrade" className="ml-auto text-[10px] text-[#5b5bd6] cursor-pointer hover:underline">
+          <a href="/upgrade" className="ml-auto flex-shrink-0 pl-2 text-[10px] text-[#5b5bd6] cursor-pointer hover:underline">
             프로로 업그레이드
           </a>
         )}
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 space-y-6">
         {showEmpty && (
           <div className="flex flex-col items-center justify-center py-16 gap-4 animate-in fade-in duration-500">
             <div className="w-12 h-12 rounded-2xl bg-[#eeedfe] border border-[#d9d6f7] flex items-center justify-center">

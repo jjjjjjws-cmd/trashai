@@ -180,7 +180,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen flex overflow-hidden bg-[#f8f8f6]">
+    <div className="h-dvh flex overflow-hidden bg-[#f8f8f6]">
       <Sidebar
         rooms={rooms}
         activeRoomId={activeRoomId ?? ''}
@@ -203,13 +203,32 @@ export default function Home() {
             onToggleStatus={() => setStatusOpen(true)}
           />
         ) : (
-          <div className="flex flex-col items-center justify-center h-full gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center">
-              <span className="text-amber-600 text-lg font-bold font-mono">AI</span>
+          <div className="flex flex-col h-full">
+            <div className="lg:hidden flex items-center px-4 py-3.5 border-b border-neutral-200 bg-white flex-shrink-0">
+              <button onClick={() => setSidebarOpen(true)} aria-label="메뉴 열기" className="w-8 h-8 rounded-lg hover:bg-neutral-100 flex items-center justify-center text-neutral-400 transition-colors">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
+                </svg>
+              </button>
+              <span className="ml-2 text-sm font-semibold text-neutral-900">덤덤 AI</span>
             </div>
-            <div className="text-center">
-              <p className="text-stone-600 text-sm font-medium">왼쪽에서 새 학습을 시작하세요</p>
-              <p className="text-stone-400 text-xs font-mono mt-1">주제를 입력하면 AI가 배우기 시작합니다</p>
+            <div className="flex-1 flex flex-col items-center justify-center gap-4 px-4">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center">
+                <span className="text-amber-600 text-lg font-bold font-mono">AI</span>
+              </div>
+              <div className="text-center">
+                <p className="text-stone-600 text-sm font-medium">
+                  <span className="hidden lg:inline">왼쪽에서 새 학습을 시작하세요</span>
+                  <span className="lg:hidden">새 학습을 시작하세요</span>
+                </p>
+                <p className="text-stone-400 text-xs font-mono mt-1">주제를 입력하면 AI가 배우기 시작합니다</p>
+              </div>
+              <button
+                onClick={() => setSidebarOpen(true)}
+                className="lg:hidden px-4 py-2.5 rounded-lg bg-[#5b5bd6] hover:bg-[#4d4dc6] text-white text-sm font-medium transition-colors"
+              >
+                새 학습 시작
+              </button>
             </div>
           </div>
         )}
