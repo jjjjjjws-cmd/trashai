@@ -46,7 +46,7 @@ export default async function LandingPage() {
 
         <div className="inline-flex items-center gap-2.5 mb-7">
           <div className="w-8 h-8 rounded-lg bg-[#5b5bd6] text-white flex items-center justify-center text-sm font-medium">P</div>
-          <span className="text-base font-medium text-neutral-900">폐급 AI</span>
+          <span className="text-base font-medium text-neutral-900">덤덤 AI</span>
         </div>
 
         <h1 className="text-4xl font-medium leading-tight tracking-tight text-neutral-900">
@@ -106,7 +106,7 @@ export default async function LandingPage() {
           ))}
         </div>
 
-        <p className="mt-8 text-xs text-neutral-400">폐급 AI · 가르치며 배우는 학습 도구</p>
+        <p className="mt-8 text-xs text-neutral-400">덤덤 AI · 가르치며 배우는 학습 도구</p>
 
       </div>
     </main>

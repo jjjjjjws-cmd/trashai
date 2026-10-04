@@ -8,7 +8,7 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '폐급 AI — 설명 검증형 학습 플랫폼',
+  title: '덤덤 AI — 설명 검증형 학습 플랫폼',
   description: 'AI를 가르치면서 내 이해를 검증한다',
 };
 

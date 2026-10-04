@@ -14,7 +14,7 @@ export default function TypingIndicator({ thinkingText }: TypingIndicatorProps) 
       </div>
 
       <div className="flex flex-col gap-1.5 items-start">
-        <span className="text-[11px] text-neutral-500">폐급 AI</span>
+        <span className="text-[11px] text-neutral-500">덤덤 AI</span>
         <div className="px-4 py-3 rounded-2xl rounded-tl-sm bg-white border border-neutral-200 flex items-center gap-3">
           <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-[#5b5bd6] animate-bounce [animation-delay:0ms]" />

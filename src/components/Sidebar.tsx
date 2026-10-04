@@ -53,7 +53,7 @@ export default function Sidebar({ rooms, activeRoomId, onSelectRoom, onNewRoom, 
             <div className="w-8 h-8 rounded-lg bg-[#5b5bd6] flex items-center justify-center">
               <span className="text-white text-sm font-semibold">P</span>
             </div>
-            <h1 className="text-sm font-semibold text-neutral-900 tracking-tight">폐급 AI</h1>
+            <h1 className="text-sm font-semibold text-neutral-900 tracking-tight">덤덤 AI</h1>
           </div>
         </div>
 

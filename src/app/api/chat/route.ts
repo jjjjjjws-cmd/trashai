@@ -6,7 +6,7 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 const FREE_DAILY_LIMIT = 10;
 
-const BASE = `너는 "폐급 AI"다.
+const BASE = `너는 "덤덤 AI"다.
 
 절대 일반 GPT처럼 행동하지 마라.
 

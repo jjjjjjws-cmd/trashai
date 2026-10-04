@@ -27,7 +27,7 @@ export default function ChatMessage({ message, isLatest }: ChatMessageProps) {
       <div className={`flex flex-col gap-1.5 max-w-[75%] ${isAI ? 'items-start' : 'items-end'}`}>
         <div className={`flex items-center gap-2 ${isAI ? '' : 'flex-row-reverse'}`}>
           <span className={`text-[11px] ${isAI ? 'text-neutral-500' : 'text-neutral-400'}`}>
-            {isAI ? '폐급 AI' : '선생님'}
+            {isAI ? '덤덤 AI' : '선생님'}
           </span>
           <span className="text-[10px] text-neutral-300" suppressHydrationWarning>
             {message.timestamp.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
